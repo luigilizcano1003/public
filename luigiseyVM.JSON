@@ -14,13 +14,13 @@
     "vmName": "SimpleWinVM",
     "virtualNetworkName": "MyVNET",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
-    "networkSecurityGroupName": "default-NSG"
-    "dnsLabelPrefix": "luigi-sey"
-    "windowsOSVersion": "windows-10"
-    "vmSize": "Standard_D2_v3"
-    "location": "[resourceGroup().location]"
-    "adminUsername": "perrolocowayne"
-    "adminPassword": "Elnegritodelasalsa."
+    "networkSecurityGroupName": "default-NSG",
+    "dnsLabelPrefix": "luigi-sey",
+    "windowsOSVersion": "windows-10",
+    "vmSize": "Standard_D2_v3",
+    "location": "[resourceGroup().location]",
+    "adminUsername": "perrolocowayne",
+    "adminPassword": "Elnegritodelasalsa.",
 
   },
   "resources": [
