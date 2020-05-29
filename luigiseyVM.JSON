@@ -18,7 +18,7 @@
     "dnsLabelPrefix": "luigi-sey",
     "windowsOSVersion": "windows-10",
     "vmSize": "Standard_D2_v3",
-    "location": "[resourceGroup().location]",
+    "location": "eastus2",
     "adminUsername": "perrolocowayne",
     "adminPassword": "Elnegritodelasalsa."
 
