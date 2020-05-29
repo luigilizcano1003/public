@@ -1,9 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-  "parameters": {
-       
-  },
   "variables": {
     "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'sawinvm')]",
     "nicName": "myVMNic",
@@ -14,27 +11,16 @@
     "vmName": "SimpleWinVM",
     "virtualNetworkName": "MyVNET",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
-    "networkSecurityGroupName": "default-NSG"
-    "dnsLabelPrefix": "luigi-sey"
-    "windowsOSVersion": "windows-10"
-    "vmSize": "Standard_D2_v3"
-    "location": "[resourceGroup().location]"
-    "adminUsername": "perrolocowayne"
+    "networkSecurityGroupName": "default-NSG",
+    "dnsLabelPrefix": "luigi-sey",
+    "windowsOSVersion": "windows-10",
+    "vmSize": "Standard_D2_v3",
+    "location": "eastus2",
+    "adminUsername": "perrolocowayne",
     "adminPassword": "Elnegritodelasalsa."
 
   },
   "resources": [
-    {
-      "type": "Microsoft.Storage/storageAccounts",
-      "apiVersion": "2018-11-01",
-      "name": "[variables('storageAccountName')]",
-      "location": "[parameters('location')]",
-      "sku": {
-        "name": "Standard_LRS"
-      },
-      "kind": "Storage",
-      "properties": {}
-    },
     {
       "type": "Microsoft.Network/publicIPAddresses",
       "apiVersion": "2018-11-01",
@@ -163,8 +149,7 @@
         },
         "diagnosticsProfile": {
           "bootDiagnostics": {
-            "enabled": true,
-            "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))).primaryEndpoints.blob]"
+            "enabled": false
           }
         }
       }
